@@ -24,7 +24,7 @@ end
 function calc(b::BSpline, i::Int, p::Int, x::T) where T <: Real
     if (i + p + 1 > b.n + 2 * b.p) || (i < 1) || !(b.t[i] <= x <= b.t[i+p+1])
         return zero(T)
-    elseif p === b.p && i === b.n + p - 1 && x === b.t[end]
+    elseif p === b.p && i === b.n + p - 1 && x == b.t[end]
         return one(T)
     end
 
